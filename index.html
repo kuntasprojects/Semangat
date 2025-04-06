@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Bunga Mawar Mekar</title>
+  <title>Kumpulan Mawar Semangat UTS</title>
   <style>
     body {
       background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
@@ -16,41 +16,50 @@
       align-items: center;
     }
 
-    .rose-container {
-      position: relative;
-      width: 150px;
-      height: 150px;
-      animation: bloomContainer 1.5s ease-out;
+    .garden {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
     }
 
-    @keyframes bloomContainer {
-      0% { transform: scale(0.5); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+    .rose-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      animation: appear 1s ease-out;
+    }
+
+    @keyframes appear {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     .bud {
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       background: #b22222;
       border-radius: 50% 50% 0 0;
       transform: rotate(45deg);
       position: absolute;
-      top: 45px;
-      left: 45px;
-      animation: budShrink 1s 2s forwards;
+      top: 30px;
+      left: 30px;
+      animation: budShrink 1s forwards;
       z-index: 3;
     }
 
     @keyframes budShrink {
       to {
-        transform: scale(0) rotate(45deg);
+        transform: scale(0);
         opacity: 0;
       }
     }
 
     .petal {
-      width: 60px;
-      height: 60px;
+      width: 40px;
+      height: 40px;
       background: radial-gradient(circle at 30% 30%, #e75480, #c2185b);
       border-radius: 50%;
       position: absolute;
@@ -58,29 +67,45 @@
       z-index: 2;
     }
 
-    .petal1 { top: 30px; left: 45px; animation: bloom 0.5s 2.2s forwards; }
-    .petal2 { top: 45px; left: 30px; animation: bloom 0.5s 2.5s forwards; }
-    .petal3 { top: 45px; left: 60px; animation: bloom 0.5s 2.8s forwards; }
-    .petal4 { top: 60px; left: 45px; animation: bloom 0.5s 3.1s forwards; }
-    .petal5 { top: 45px; left: 45px; animation: bloom 0.5s 3.4s forwards; }
+    .petal1 { top: 20px; left: 30px; animation: bloom 0.5s forwards; }
+    .petal2 { top: 30px; left: 20px; animation: bloom 0.5s forwards; }
+    .petal3 { top: 30px; left: 40px; animation: bloom 0.5s forwards; }
+    .petal4 { top: 40px; left: 30px; animation: bloom 0.5s forwards; }
+    .petal5 { top: 30px; left: 30px; animation: bloom 0.5s forwards; }
 
     @keyframes bloom {
-      from {
-        transform: scale(0.3);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
+      from { transform: scale(0.3); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
+    /* Delay per bunga */
+    .rose1 .bud { animation-delay: 1s; }
+    .rose1 .petal1 { animation-delay: 2s; }
+    .rose1 .petal2 { animation-delay: 2.2s; }
+    .rose1 .petal3 { animation-delay: 2.4s; }
+    .rose1 .petal4 { animation-delay: 2.6s; }
+    .rose1 .petal5 { animation-delay: 2.8s; }
+
+    .rose2 .bud { animation-delay: 2s; }
+    .rose2 .petal1 { animation-delay: 3s; }
+    .rose2 .petal2 { animation-delay: 3.2s; }
+    .rose2 .petal3 { animation-delay: 3.4s; }
+    .rose2 .petal4 { animation-delay: 3.6s; }
+    .rose2 .petal5 { animation-delay: 3.8s; }
+
+    .rose3 .bud { animation-delay: 3s; }
+    .rose3 .petal1 { animation-delay: 4s; }
+    .rose3 .petal2 { animation-delay: 4.2s; }
+    .rose3 .petal3 { animation-delay: 4.4s; }
+    .rose3 .petal4 { animation-delay: 4.6s; }
+    .rose3 .petal5 { animation-delay: 4.8s; }
+
     .message {
-      margin-top: 30px;
-      font-size: 1.6rem;
+      margin-top: 20px;
+      font-size: 1.5rem;
       color: #b22222;
       opacity: 0;
-      animation: showText 1s 4s forwards;
+      animation: showText 1s 5.5s forwards;
     }
 
     @keyframes showText {
@@ -97,23 +122,38 @@
 </head>
 <body>
 
-  <!-- Musik -->
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Mawar -->
-  <div class="rose-container">
-    <div class="bud"></div>
-    <div class="petal petal1"></div>
-    <div class="petal petal2"></div>
-    <div class="petal petal3"></div>
-    <div class="petal petal4"></div>
-    <div class="petal petal5"></div>
+  <div class="garden">
+    <div class="rose-container rose1">
+      <div class="bud"></div>
+      <div class="petal petal1"></div>
+      <div class="petal petal2"></div>
+      <div class="petal petal3"></div>
+      <div class="petal petal4"></div>
+      <div class="petal petal5"></div>
+    </div>
+    <div class="rose-container rose2">
+      <div class="bud"></div>
+      <div class="petal petal1"></div>
+      <div class="petal petal2"></div>
+      <div class="petal petal3"></div>
+      <div class="petal petal4"></div>
+      <div class="petal petal5"></div>
+    </div>
+    <div class="rose-container rose3">
+      <div class="bud"></div>
+      <div class="petal petal1"></div>
+      <div class="petal petal2"></div>
+      <div class="petal petal3"></div>
+      <div class="petal petal4"></div>
+      <div class="petal petal5"></div>
+    </div>
   </div>
 
-  <!-- Pesan Semangat -->
-  <div class="message">Semangat UTS-nya ya Kak! Seperti mawar, kamu juga akan mekar indah 🌹✨</div>
+  <div class="message">Semangat UTS-nya ya Kak! Kamu mekar secantik mawar-mawar ini 🌹🌹🌹</div>
 
 </body>
 </html>
