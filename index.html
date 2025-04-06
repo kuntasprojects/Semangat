@@ -1,153 +1,30 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kumpulan Mawar Mekar</title>
-  <style>
-    body {
-      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .garden {
-      display: grid;
-      grid-template-columns: repeat(3, 120px);
-      gap: 30px;
-      margin-bottom: 40px;
-      animation: fadeIn 1s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .rose {
-      position: relative;
-      width: 120px;
-      height: 120px;
-    }
-
-    .petal {
-      width: 60px;
-      height: 60px;
-      background: radial-gradient(circle at 30% 30%, #e75480, #c2185b);
-      border-radius: 50%;
-      position: absolute;
-      opacity: 1;
-      z-index: 2;
-    }
-
-    .petal1 { top: 30px; left: 45px; }
-    .petal2 { top: 45px; left: 30px; }
-    .petal3 { top: 45px; left: 60px; }
-    .petal4 { top: 60px; left: 45px; }
-    .petal5 { top: 45px; left: 45px; }
-
-    .center {
-      width: 40px;
-      height: 40px;
-      background: #a00040;
-      border-radius: 50%;
-      position: absolute;
-      top: 40px;
-      left: 40px;
-      z-index: 3;
-    }
-
-    .message {
-      font-size: 1.6rem;
-      color: #b22222;
-      opacity: 0;
-      animation: showText 1s 1s forwards;
-    }
-
-    @keyframes showText {
-      to {
-        opacity: 1;
-        transform: translateY(-10px);
-      }
-    }
-
-    audio {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Flowers</title>
 </head>
 <body>
-
-  <!-- Musik Ceria -->
-  <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Taman Mawar -->
-  <div class="garden">
-    <!-- Mawar 1 -->
-    <div class="rose">
-      <div class="petal petal1"></div>
-      <div class="petal petal2"></div>
-      <div class="petal petal3"></div>
-      <div class="petal petal4"></div>
-      <div class="petal petal5"></div>
-      <div class="center"></div>
+    <div class="greetings">
+        <!-- silahkan menambah kata sesuai keinginan dengan <span>text...</span -->
+        <span>ACIKA YANG CANTIK</span>
+        <span>MAAFIN YAAA</span>
+        <span>MARAHNYA JANGAN LAMA-LAMA</span>
+        <br>
+        <br>
     </div>
-    <!-- Mawar 2 -->
-    <div class="rose">
-      <div class="petal petal1"></div>
-      <div class="petal petal2"></div>
-      <div class="petal petal3"></div>
-      <div class="petal petal4"></div>
-      <div class="petal petal5"></div>
-      <div class="center"></div>
+    <div class="description">
+        <span>Udahan ya marahnya, Ini sebagai permintaan maaf aku....</span>
     </div>
-    <!-- Mawar 3 -->
-    <div class="rose">
-      <div class="petal petal1"></div>
-      <div class="petal petal2"></div>
-      <div class="petal petal3"></div>
-      <div class="petal petal4"></div>
-      <div class="petal petal5"></div>
-      <div class="center"></div>
+    <div class="button">
+        <button>
+            <a href="flower.html">Klik disini ya Acikaa</a>
+        </button>
+        
     </div>
-    <!-- Mawar 4 -->
-    <div class="rose">
-      <div class="petal petal1"></div>
-      <div class="petal petal2"></div>
-      <div class="petal petal3"></div>
-      <div class="petal petal4"></div>
-      <div class="petal petal5"></div>
-      <div class="center"></div>
-    </div>
-    <!-- Mawar 5 -->
-    <div class="rose">
-      <div class="petal petal1"></div>
-      <div class="petal petal2"></div>
-      <div class="petal petal3"></div>
-      <div class="petal petal4"></div>
-      <div class="petal petal5"></div>
-      <div class="center"></div>
-    </div>
-    <!-- Mawar 6 -->
-    <div class="rose">
-      <div class="petal petal1"></div>
-      <div class="petal petal2"></div>
-      <div class="petal petal3"></div>
-      <div class="petal petal4"></div>
-      <div class="petal petal5"></div>
-      <div class="center"></div>
-    </div>
-  </div>
-
-  <!-- Pesan Akhir -->
-  <div class="message">Semangat UTS-nya ya Kak! Taman mawar ini menanti keberhasilanmu 🌹✨</div>
-
 </body>
 </html>
