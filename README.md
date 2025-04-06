@@ -1,2 +1,2 @@
-# yeelatuh
-entahlah apa ini
+# heheheh
+Samangat semangat
