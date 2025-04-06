@@ -2,70 +2,77 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Mawar Semangat UTS</title>
+  <title>Bunga Mawar Mekar</title>
   <style>
     body {
-      margin: 0;
       background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      margin: 0;
       height: 100vh;
       overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      font-family: 'Segoe UI', sans-serif;
+      align-items: center;
     }
 
-    .rose {
+    .rose-container {
       position: relative;
-      width: 120px;
-      height: 120px;
-      animation: growStem 1s ease-out forwards;
-      transform: scale(0);
+      width: 150px;
+      height: 150px;
+      animation: bloomContainer 1.5s ease-out;
     }
 
-    @keyframes growStem {
+    @keyframes bloomContainer {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .bud {
+      width: 60px;
+      height: 60px;
+      background: #b22222;
+      border-radius: 50% 50% 0 0;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 45px;
+      left: 45px;
+      animation: budShrink 1s 2s forwards;
+      z-index: 3;
+    }
+
+    @keyframes budShrink {
       to {
-        transform: scale(1);
+        transform: scale(0) rotate(45deg);
+        opacity: 0;
       }
     }
 
     .petal {
-      position: absolute;
       width: 60px;
       height: 60px;
       background: radial-gradient(circle at 30% 30%, #e75480, #c2185b);
       border-radius: 50%;
+      position: absolute;
       opacity: 0;
-      animation: bloom 0.8s ease-out forwards;
+      z-index: 2;
     }
 
-    .petal1 { top: 30px; left: 30px; animation-delay: 1s; }
-    .petal2 { top: 0px; left: 30px; animation-delay: 1.4s; }
-    .petal3 { top: 30px; left: 0px; animation-delay: 1.8s; }
-    .petal4 { top: 30px; left: 60px; animation-delay: 2.2s; }
-    .petal5 { top: 60px; left: 30px; animation-delay: 2.6s; }
+    .petal1 { top: 30px; left: 45px; animation: bloom 0.5s 2.2s forwards; }
+    .petal2 { top: 45px; left: 30px; animation: bloom 0.5s 2.5s forwards; }
+    .petal3 { top: 45px; left: 60px; animation: bloom 0.5s 2.8s forwards; }
+    .petal4 { top: 60px; left: 45px; animation: bloom 0.5s 3.1s forwards; }
+    .petal5 { top: 45px; left: 45px; animation: bloom 0.5s 3.4s forwards; }
 
     @keyframes bloom {
-      0% { opacity: 0; transform: scale(0.2) rotate(0deg); }
-      100% { opacity: 1; transform: scale(1) rotate(360deg); }
-    }
-
-    .center {
-      width: 40px;
-      height: 40px;
-      background: #a00040;
-      border-radius: 50%;
-      position: absolute;
-      top: 40px;
-      left: 40px;
-      z-index: 2;
-      opacity: 0;
-      animation: fadeIn 0.5s 3s forwards;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
+      from {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .message {
@@ -73,10 +80,10 @@
       font-size: 1.6rem;
       color: #b22222;
       opacity: 0;
-      animation: showMessage 1s 3.5s forwards;
+      animation: showText 1s 4s forwards;
     }
 
-    @keyframes showMessage {
+    @keyframes showText {
       to {
         opacity: 1;
         transform: translateY(-10px);
@@ -90,24 +97,23 @@
 </head>
 <body>
 
-  <!-- Musik Latar Ceria -->
+  <!-- Musik -->
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mpeg">
-    Browser Anda tidak mendukung audio.
   </audio>
 
-  <!-- Mawar Dibuat Manual -->
-  <div class="rose">
+  <!-- Mawar -->
+  <div class="rose-container">
+    <div class="bud"></div>
     <div class="petal petal1"></div>
     <div class="petal petal2"></div>
     <div class="petal petal3"></div>
     <div class="petal petal4"></div>
     <div class="petal petal5"></div>
-    <div class="center"></div>
   </div>
 
-  <!-- Pesan Akhir -->
-  <div class="message">Semangat ya buat UTS-nya, Kak! Kamu bakal mekar seperti mawar 🌹✨</div>
+  <!-- Pesan Semangat -->
+  <div class="message">Semangat UTS-nya ya Kak! Seperti mawar, kamu juga akan mekar indah 🌹✨</div>
 
 </body>
 </html>
