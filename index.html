@@ -5,73 +5,56 @@
   <title>Semangat UTS!</title>
   <style>
     body {
-      background-color: #fff0f5;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      overflow: hidden;
       font-family: 'Segoe UI', sans-serif;
     }
 
-    .flower {
-      width: 200px;
-      height: 200px;
-      position: relative;
+    .garden {
+      display: flex;
+      gap: 40px;
+      align-items: flex-end;
+      justify-content: center;
     }
 
-    .petal {
-      width: 60px;
-      height: 100px;
-      background: pink;
-      border-radius: 50% 50% 0 0;
-      position: absolute;
-      top: 50px;
-      left: 70px;
-      transform-origin: bottom center;
+    .rose {
+      width: 100px;
       opacity: 0;
+      transform: translateY(100px) scale(0.5);
+      animation: bloomUp 1.5s ease-out forwards;
     }
 
-    .petal:nth-child(1) { transform: rotate(0deg); animation: petal 1s 0.5s forwards; }
-    .petal:nth-child(2) { transform: rotate(72deg); animation: petal 1s 1s forwards; }
-    .petal:nth-child(3) { transform: rotate(144deg); animation: petal 1s 1.5s forwards; }
-    .petal:nth-child(4) { transform: rotate(216deg); animation: petal 1s 2s forwards; }
-    .petal:nth-child(5) { transform: rotate(288deg); animation: petal 1s 2.5s forwards; }
+    .rose:nth-child(1) { animation-delay: 0.5s; }
+    .rose:nth-child(2) { animation-delay: 1.5s; }
+    .rose:nth-child(3) { animation-delay: 2.5s; }
 
-    @keyframes petal {
+    @keyframes bloomUp {
       to {
         opacity: 1;
-        transform: scale(1.2) rotate(var(--rotate));
+        transform: translateY(0) scale(1);
       }
     }
 
-    .center {
-      width: 50px;
-      height: 50px;
-      background: yellow;
-      border-radius: 50%;
-      position: absolute;
-      top: 75px;
-      left: 75px;
-      opacity: 0;
-      animation: centerShow 1s 3s forwards;
-    }
-
-    @keyframes centerShow {
-      to { opacity: 1; }
-    }
-
     .message {
-      margin-top: 20px;
-      font-size: 1.5rem;
-      color: #e75480;
+      margin-top: 30px;
+      font-size: 1.8rem;
+      color: #b22222;
       opacity: 0;
-      animation: showMessage 1s 4.5s forwards;
+      animation: showText 1s 4.5s forwards;
     }
 
-    @keyframes showMessage {
-      to { opacity: 1; transform: translateY(-10px); }
+    @keyframes showText {
+      to {
+        opacity: 1;
+        transform: translateY(-10px);
+      }
     }
 
     audio {
@@ -84,21 +67,18 @@
   <!-- Musik Latar Online -->
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mpeg">
-    Browser Anda tidak mendukung elemen audio.
+    Browser Anda tidak mendukung audio.
   </audio>
 
-  <!-- Animasi Bunga -->
-  <div class="flower">
-    <div class="petal" style="--rotate: 0deg;"></div>
-    <div class="petal" style="--rotate: 72deg;"></div>
-    <div class="petal" style="--rotate: 144deg;"></div>
-    <div class="petal" style="--rotate: 216deg;"></div>
-    <div class="petal" style="--rotate: 288deg;"></div>
-    <div class="center"></div>
+  <!-- Taman Mawar -->
+  <div class="garden">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Red_rose.svg/240px-Red_rose.svg.png" class="rose" alt="Rose 1">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Red_rose.svg/240px-Red_rose.svg.png" class="rose" alt="Rose 2">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Red_rose.svg/240px-Red_rose.svg.png" class="rose" alt="Rose 3">
   </div>
 
-  <!-- Ucapan Semangat -->
-  <div class="message">Semangat ya buat UTS-nya, Kak! Kamu pasti bisa!</div>
+  <!-- Pesan Semangat -->
+  <div class="message">Semangat ya buat UTS-nya, Kak! Mawar aja bisa mekar, apalagi kamu 🌹✨</div>
 
 </body>
 </html>
